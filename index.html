@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="headerWrap pc-header">
+        <!-- 헤더 탑 -->
+        <div class="header-top">
+            <div class="con flex">
+                <a href="#">로그인</a>
+                <a href="#">CS센터</a>
+            </div>        
+        </div>
+
+        <!-- 헤더 -->
+        <div class="header">
+            <div class="con flex">
+                <a href="#" class="logo">
+                    <img src="/homebaristaimage/logo.svg" alt="로고이미지">
+                </a>
+
+                <div class="small-header">
+                    <div class="sub-menu">
+                        <img src="/homebaristaimage/햄버거.svg" alt="">                        
+                    </div>                    
+
+                    <ul class="icons flex">
+                        <li>
+                            <div class="search-box flex">
+                                <input type="text" placeholder="검색어 입력">
+                                <button class="icon" type="button">
+                                    <img src="/homebaristaimage/검색.svg" alt="">
+                                </button>
+                            </div>
+                        </li>
+                        <li><a class="icon" href="#"><img src="/homebaristaimage/마이페이지.svg" alt="마이페이지"></a></li>
+                        <li><a class="icon" href="#"><img src="/homebaristaimage/배송.svg" alt="배송현황"></a></li>
+                        <li><a class="icon" href="#"><img src="/homebaristaimage/장바구니.svg" alt="장바구니"></a></li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+
+        <!-- 메뉴박스 -->
+        <div class="menu-box" id="scroll-header">
+            <div class="con">
+                <a href="#" class="logo-icon">
+                    <img src="/homebaristaimage/short-logo.svg" alt="">
+                </a>
+                
+
+                
+                <div class="nav">
+                    <ul class="menu">
+                        <li><a href="#">공동구매</a></li>
+                        <li><a href="#">정수필터</a></li>
+                        <li><a href="#">커피용품</a></li>
+                        <li><a href="#">원두 도/소매 상담</a></li>
+                        <li><a href="#">구매후기</a></li>
+                    </ul>
+                </div>
+                
+                
+                
+                <ul class="icons flex">
+                    <li>
+                        <div class="search-box flex">
+                            <input type="text" placeholder="검색어 입력">
+                            <button class="icon" type="button">
+                                <img src="/homebaristaimage/검색.svg" alt="">
+                            </button>
+                        </div>
+                    </li>
+                    <li><a class="icon" href="#"><img src="/homebaristaimage/마이페이지.svg" alt="마이페이지"></a></li>
+                    <li><a class="icon" href="#"><img src="/homebaristaimage/배송.svg" alt="배송현황"></a></li>
+                    <li><a class="icon" href="#"><img src="/homebaristaimage/장바구니.svg" alt="장바구니"></a></li>
+                </ul>
+                
+                <button class="sub-menu img-box" type="button">
+                    <img src="/homebaristaimage/submenu-햄버거.svg" class="img1">   
+                    <img src="/homebaristaimage/submenu-close.svg" class="img2">                     
+                </button>
+            </div>
+        </div>
+
+
+        <!-- min-height -->
+        <div class="min-height"></div>
+    </div>
+
+    <div class="mb-header">
+        <div class="con">
+
+            <button class="sub-menu" type="button">
+                <img src="/homebaristaimage/mb-햄버거.svg" class="img1" alt="">
+                <img src="/homebaristaimage/mb-submenu-close.svg" class="img2" alt="">                        
+            </button>
+
+            <div class="mb-logo img-box">
+                <img src="/homebaristaimage/short-logo.svg" alt="">
+            </div>
+
+            <div class="mb-icon">
+                <a href="#">
+                    <img src="/homebaristaimage/mb-마이페이지.svg" alt="">
+                </a>
+
+                <a href="#">
+                    <img src="/homebaristaimage/mb-장바구니.svg" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-sidebar">
+            <div class="search-box flex">
+                <input type="text" placeholder="검색어 입력">
+                <button class="icon" type="button">
+                    <img src="/homebaristaimage/검색.svg" alt="">
+                </button>
+            </div>
+
+            <ul class="mb-menu">
+                <li><a href="#">공동구매</a></li>
+                <li><a href="#">정수필터</a></li>
+                <li><a href="#">커피용품</a></li>
+                <li><a href="#">원두 도/소매 상담</a></li>
+                <li><a href="#">구매후기</a></li>
+            </ul>
+
+            <ul class="user-menu">
+                <li><a href="#">배송조회</a></li>
+                <li><a href="#">찜리스트</a></li>
+            </ul>
+
+            <div class="cs">
+                <span>[cs센터] 카카오플러스</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- visual -->
+    <section class="visual">
+        <div class="visual-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/배너.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/배너2.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/배너3.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="swiper-pagination"></div>
+                    
+        </div>
+    </section>
+
+    <!-- mb-이달의 브랜드 -->
+    <section id="mb-monthlyBrand">
+        <div class="title">
+            <span>이달의 브랜드</span>                
+        </div>
+
+        <div class="mb-monthly-main">
+            <div class="mb-monthly-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-one">
+                        <div>
+                            <div class="txt-box">
+                                <span>FILLOUT</span>
+                                <div><img src="/homebaristaimage/mb-이달의브랜드txt-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div>  
+                            <a href="#">
+                                자세히 보기
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide-two">
+                        <div>
+                            <div class="txt-box">
+                                <span>PIERROT</span>
+                                <div><img src="/homebaristaimage/mb-이달의브랜드txt-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div>  
+                            <a href="#">
+                                자세히 보기
+                            </a> 
+                        </div> 
+                    </div>
+                    <div class="swiper-slide slide-three">
+                        <div>
+                            <div class="txt-box">
+                                <span>MICHELE</span>
+                                <div><img src="/homebaristaimage/mb-이달의브랜드txt-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div> 
+                            <a href="#">
+                                자세히 보기
+                            </a> 
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- video -->
+    <section class="video">
+        <div class="con">
+            <div class="fade">
+                <p data-aos="fade-up" data-aos-duration="2000" >[BUNKER] 2025 Brand Film.</p>
+            </div>
+            
+
+            <div class="video-box">
+                <iframe id="youtubeIframe" src="https://www.youtube.com/embed/ohWhMm75jvo?autoplay=1&mute=1&controls=1&playlist=ohWhMm75jvo" title="YouTube video player" frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen="1"></iframe>
+            </div>
+    </section>
+
+    <!-- 메인소개 -->
+    <section class="main-info">
+        <div class="con flex">
+            <div class="big-logo">
+                <img src="/homebaristaimage/big-logo.svg" alt="biglogo">
+                <ul>
+                    <li class="flip-card-container">
+                        <div class="flip-card">       
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img1.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                커피 리브레
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <li class="flip-card-container">
+                        <div class="flip-card">                        
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img2.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                톨드 어 스토리
+                            </div>    
+                        </div>
+                    </li>
+
+                    <li class="flip-card-container">
+                        <div class="flip-card"> 
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img3.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                히떼 로스터리
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flip-card-container">
+                        <div class="flip-card">
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img4.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                베르크
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flip-card-container">
+                        <div class="flip-card">
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img5.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                헤베 커피
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flip-card-container">
+                        <div class="flip-card">
+                            <div class="flip_front">
+                                <img src="/homebaristaimage/main-info-img6.svg" alt="">
+                            </div>
+                            <div class="flip_back">
+                                포비 로스터리                                
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="txt">
+                <p>홈바리스타를 위한 최고의 선택, 지금 함께하세요.</p>
+                <p>
+                    <span data-aos="fade-up" data-aos-duration="2000">특별한 커피 공구의 시작</span>
+                </p>
+                <p>
+                    유명 커피 로스터리와 홈바리스타클럽이 만나, <br class="block">특별한 커피 공동구매를 준비했습니다.
+                    <span></span>
+                    선별된 원두를 합리적인 가격에 <br class="block">만나볼 수 있는 기회!
+                </p>
+                <p>나만의 홈카페를 한층 더 업그레이드할 지금이 바로 그 순간입니다.</p>
+                <p>좋은 커피를 더 많은 분과 <br class="block"> 나누는 즐거움을 함께하고 싶습니다.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 이달의 브랜드 -->
+    <section class="monthlyBrand">
+        <div class="title">
+            <p>
+                <span data-aos="fade-up" data-aos-duration="2000">이달의 브랜드</span>
+            </p>
+            <p>한 달 동안 진행하는, 특별한 커피와 함께 일상의 작은 여유를 즐겨보세요</p>
+        </div>
+
+        <div class="monthly-main">
+            <div class="monthly-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="slide-one">
+                            <div class="txt-box">
+                                <span>FILLOUT</span>
+                                <div><img src="/homebaristaimage/이달의브랜드txx-box-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div>                         
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="slide-two">  
+                            <div class="txt-box">
+                                <span>PIERROT</span>
+                                <div><img src="/homebaristaimage/이달의브랜드txx-box-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div>                         
+                        </a>  
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="slide-three"> 
+                            <div class="txt-box">
+                                <span>MICHELE</span>
+                                <div><img src="/homebaristaimage/이달의브랜드txx-box-x.svg" alt=""></div>
+                                <span>HOME BARISTA CLUB</span>
+                            </div>                         
+                        </a>
+                    </div>
+                </div>                    
+            </div>
+            <div class="swiper-button swiper-button-prev"></div>
+            <div class="swiper-button swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- best -->
+    <section class="best">
+        <div class="con">
+            <div class="s-title flex">
+                <h2>인기상품</h2>
+                <div class="swiper-button-wrap">
+                    <div class="swiper-button swiper-button-prev"></div>
+                    <div class="swiper-button swiper-button-next"></div>
+                </div>
+            </div>
+
+            <div class="best-main">
+                <div class="best-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="/homebaristaimage/인기상품1.svg" alt="">
+                                    <span class="review-box">REVIEW 20</span>
+                                </div>
+                                <div class="txt-box">
+                                    <p class="tit">벙커컴퍼니 와이니베리[단독발송]</p>
+                                    <p class="sub-tit">한정수량! 단독 발송 상품</p>
+                                    <p>
+                                        <span>40,000원</span>
+                                        <span>35,200원</span>
+                                    </p>
+                                </div>                                
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="/homebaristaimage/인기상품2.svg" alt="">
+                                    <span class="review-box">REVIEW 135</span>
+                                </div>
+                                <div class="txt-box">
+                                    <p class="tit">미켈레커피</p>
+                                    <p class="sub-tit">미켈레커피와 준비한 콜라보 상품!</p>
+                                    <p>
+                                        <span>13,500원</span>
+                                        <span>11,000원</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="/homebaristaimage/인기상품3.svg" alt="">
+                                    <span class="review-box">REVIEW 80</span>
+                                </div>
+                                <div class="txt-box">
+                                    <p class="tit">파라곤필터 연수필터 H3500 본품</p>
+                                    <p class="sub-tit">파라곤 필터만의 특별한 연수필터!</p>
+                                    <p>
+                                        <span>380,000원</span>
+                                        <span>330,000원</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="img-box">
+                                    <img src="/homebaristaimage/인기상품4.svg" alt="">
+                                    <span class="review-box">REVIEW 345</span>
+                                </div>
+                                <div class="txt-box">
+                                    <p class="tit">헤이찰리 파우더</p>
+                                    <p class="sub-tit">스페셜티 커피를 가장 간편하게 즐기는 방법!</p>
+                                    <p>
+                                        <span>18,000원</span>
+                                        <span>15,000원</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <!-- review -->
+    <section class="review">
+        <div class="con">
+            <div class="s-title">
+                <h2>실시간 후기</h2>
+                <a href="#" class="view-more">더보기</a>
+            </div>
+
+            <div class="review-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/review.svg" alt="후기이미지1">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 다음번에도 또 하면 좋겠습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기 이미지2.jpg" alt="후기이미지2">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>                               
+                                생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지3.jpeg" alt="후기이미지3">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지4.jpeg" alt="후기이미지4">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지5.jpg" alt="후기이미지5">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                신선하고 맛있어요. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지3.jpeg" alt="후기이미지6">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/review.svg" alt="후기이미지7">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지4.jpeg" alt="">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img-box">
+                            <img src="/homebaristaimage/후기이미지5.jpg" alt="">
+                        </div>
+                        <div class="star-box">
+                            <span>네이버페이구매자</span>
+                            <span class="star">
+                                <img src="/homebaristaimage/star.svg" alt="">
+                            </span>
+                        </div>
+                        <div class="txt-box">
+                            <p>
+                                믿고 먹는 필아웃 커피! 감사합니다. 
+                                <br>
+                                신선하고 맛있어요. 생각보다 더 좋아서 재구매 의사있습니다. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 마퀴 -->
+    <div class="marquee">
+        <div class="scroll">
+            <img src="/homebaristaimage/마퀴1.svg" alt="">        
+            <img src="/homebaristaimage/마퀴2.svg" alt="">        
+            <img src="/homebaristaimage/마퀴3.svg" alt="">        
+            <img src="/homebaristaimage/마퀴1.svg" alt="">        
+            <img src="/homebaristaimage/마퀴2.svg" alt="">        
+            <img src="/homebaristaimage/마퀴3.svg" alt="">
+            <img src="/homebaristaimage/마퀴1.svg" alt="">        
+            <img src="/homebaristaimage/마퀴2.svg" alt="">        
+            <img src="/homebaristaimage/마퀴3.svg" alt="">
+            <img src="/homebaristaimage/마퀴1.svg" alt="">        
+            <img src="/homebaristaimage/마퀴2.svg" alt="">        
+            <img src="/homebaristaimage/마퀴3.svg" alt="">                    
+        </div>        
+    </div>
+
+    <!-- 협력업체 company -->
+    <section class="company">
+        <div class="con">
+            <div class="s-title">
+                <h2>원두 협력 업체</h2>
+            </div>
+
+            <ul class="grid grid-cols-5">
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 8.svg" alt="">
+                        <div class="hover-box">벙커커피</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 6.svg" alt="">
+                        <div class="hover-box">베르크</div>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 7.svg" alt="">
+                        <div class="hover-box">코페아</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 9.svg" alt="">
+                        <div class="hover-box">호커스포커스 로스터스</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 10.svg" alt="">
+                        <div class="hover-box">먼스커피</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 11.svg" alt="">
+                        <div class="hover-box">필아웃컴퍼니</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 12.svg" alt="">
+                        <div class="hover-box">미켈레커피</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 13.svg" alt="">
+                        <div class="hover-box">빈 브라더스</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 14.svg" alt="">
+                        <div class="hover-box">톨드어스토리</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 15.svg" alt="">
+                        <div class="hover-box">502 커피로스터스</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 16.svg" alt="">
+                        <div class="hover-box">기미</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 17.svg" alt="">
+                        <div class="hover-box">나무사이로</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 18.svg" alt="">
+                        <div class="hover-box">디폴트밸류</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="img-box"><img src="/homebaristaimage/image 19.svg" alt="">
+                        <div class="hover-box">로스팅웨어</div>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 20.svg" alt="">
+                        <div class="hover-box">180 커피로스터스</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- mb- 협력업체 company -->
+    <section class="mb-company">
+        <div class="s-title">
+            <h2>원두 협력 업체</h2>
+        </div>
+
+        <div class="mb-company-swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 8.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 6.svg" alt="">
+                    </a> 
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 7.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 9.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 10.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 11.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 12.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 13.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 14.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 15.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 16.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 17.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 18.svg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box"><img src="/homebaristaimage/image 19.svg" alt="">
+                    </a>    
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="img-box">
+                        <img src="/homebaristaimage/image 20.svg" alt="">
+                    </a>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <!-- sns -->
+    <section class="sns">
+        <div class="con">
+            <div class="s-title">
+                <h2>SNS</h2>
+            </div>
+
+            <ul class="grid grid-cols-3">
+                <li>
+                    <a href="#">
+                        <img src="/homebaristaimage/네이버카페.svg" alt="">
+                        <span>네이버카페</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/homebaristaimage/카카오플러스.svg" alt="">
+                        <span>[cs센터] 카카오플러스</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/homebaristaimage/인스타그램.svg" alt="">
+                        <span>인스타그램</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="f-top">
+            <div class="con">
+                <a href="#" class="f-logo">
+                    <img src="/homebaristaimage/short-logo.svg" alt="로고">
+                </a>
+
+                <ul class="flex">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">광고/제휴 문의</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="f-bottom">
+            <div class="con">
+                <div class="info">
+                    <span>대표: 김요한</span>
+                    <span>개인정보관리자: 김요한</span>
+                    <span>주소: 경기도 용인시 기흥구 동백7로 96 (백현마을한라비발디)</span>
+                    <br>
+                    <p>
+                        카카오 채널: 
+                        <a href="#">homebaristaclub(클릭시 바로 연결)</a>&nbsp;
+                        상담은 카카오 채팅으로 가능합니다.
+                    </p>
+                    <span>
+                        대표번호: 142-04-19854
+                    </span>
+                    <span>
+                        메일: yohan098@naver.com
+                    </span>
+                    <span>
+                        사업자등록번호: 142-04-19854
+                        <a href="#">[사업자번호조회]</a>
+                    </span>
+                    <br>
+                    <span>통신판매업신고번호: 제 2019-용인기흥-1042호</span>
+                    <span>호스팅제공: 엔에이치엔커머스(주)</span>
+                    <div>copyright. 2021.homebaristashop.com. All rights reserved.</div>
+                </div>
+                <div class="bank">
+                    <span>BANK INFO</span>
+                    <P>
+                        <span>기업은행</span>
+                        <span>23907986701072</span>
+                    </P>
+                    <span>예금주: 김요한 [홈바리스타클럽]</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
