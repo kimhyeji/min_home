@@ -1531,15 +1531,16 @@ img {
 
 /* marquee-slide 시작 */
 .marquee {
-    padding: 3.75rem 0;
-    overflow: hidden;    
+    border: 1px solid blue;
+}
+.marquee .swiper-container {
+    border: 1px solid red;
 }
 
-.marquee .scroll {
-    display: flex;
-    align-items: center;
-    gap: 96px;
-    animation: marquee 80s linear infinite;
+.marquee .swiper-wrapper {
+    border: 1px solid red;
+    -webkit-transition-timing-function:linear!important; 
+    transition-timing-function:linear!important;
 }
 
 @keyframes marquee {
@@ -1553,13 +1554,11 @@ img {
 
 @media screen and (max-width: 768px) {
     .marquee .scroll {
-        animation: marquee 50s linear infinite;
     }    
 }
 
 @media screen and (max-width: 440px) {
     .marquee .scroll {
-        animation: marquee 20s linear infinite;
     }
 }
         /* 768px 부터 끊기는 현상 발생 */

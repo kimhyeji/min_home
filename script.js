@@ -236,3 +236,19 @@ var swiper = new Swiper(".mb-company-swiper", {
   },
 });
 
+// marquee
+$(function(){
+	var swiper = new Swiper('.marquee .swiper-container', {
+        spaceBetween: 0,
+        freeMode: false,
+        enteredSlides: true,
+        speed: 5000,
+        autoplay: {
+            delay: 1,
+        },
+        loop: true,
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
+    });
+ });
