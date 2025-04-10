@@ -231,10 +231,12 @@ var swiper = new Swiper(".mb-company-swiper", {
   slidesPerView: 'auto',
   spaceBetween: 15,
   grid: {
-    rows: 2,        // 행(row) 2개
-    fill: 'row'     // 'row' 옵션으로 행 단위로 채워 넣기 (기본값 'row', 'column'도 선택 가능)
+    rows: 2,
+    fill: 'row'
   },
 });
+
+
 
 // marquee
 $(function(){
@@ -242,7 +244,7 @@ $(function(){
         spaceBetween: 0,
         freeMode: false,
         enteredSlides: true,
-        speed: 5000,
+        speed: 10000,
         autoplay: {
             delay: 1,
         },

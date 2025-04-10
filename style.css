@@ -1532,15 +1532,23 @@ img {
 /* marquee-slide 시작 */
 .marquee {
     border: 1px solid blue;
-}
-.marquee .swiper-container {
-    border: 1px solid red;
+    overflow: hidden;
 }
 
 .marquee .swiper-wrapper {
     border: 1px solid red;
     -webkit-transition-timing-function:linear!important; 
     transition-timing-function:linear!important;
+}
+
+.marquee .swiper-wrapper .swiper-slide {
+    border: 1px solid red;
+    display: flex;
+
+}
+
+.marquee .swiper-wrapper .swiper-slide img {
+    width: calc(100% / 3 )
 }
 
 @keyframes marquee {
