@@ -105,8 +105,6 @@ ScrollTrigger.matchMedia({
 AOS.init();
 
 
-
-// monthly-swiper scale모드
 var swiper = new Swiper(".monthly-swiper", {
   slidesPerView: 'auto',
   spaceBetween: 40,
@@ -123,14 +121,13 @@ var swiper = new Swiper(".monthly-swiper", {
   },
   on: {
     init: function () {
-      slideClone(this); // Swiper 초기화 후 슬라이드 복제
+      slideClone(this);
     },
 
     slideChange: function () {
       var swiperWrapper = this.el.querySelector('.swiper-wrapper');
       var slides = swiperWrapper.querySelectorAll('.swiper-slide');
-      
-      // 슬라이드가 끝까지 가면 복제본을 추가
+
       if (this.isEnd) {
         slideClone(this);
       }
@@ -147,8 +144,7 @@ function slideClone(tg){
     var clone = slides[i].cloneNode(true);
     swiperWrapper.appendChild(clone);
   }
-} // slideClone()
-
+}
 
 
 
@@ -237,20 +233,30 @@ var swiper = new Swiper(".mb-company-swiper", {
 });
 
 
+$(function () {
+  const $track = $('.track');
+  const trackWidth = $track.width();
 
-// marquee
-$(function(){
-	var swiper = new Swiper('.marquee .swiper-container', {
-        spaceBetween: 0,
-        freeMode: false,
-        enteredSlides: true,
-        speed: 10000,
-        autoplay: {
-            delay: 1,
-        },
-        loop: true,
-        slidesPerView:'auto',
-        allowTouchMove: false,
-        disableOnInteraction: true
-    });
- });
+  // 트랙 복제
+  const $clone = $track.clone();
+  $('.marquee').append($clone);
+  $clone.addClass('clone').css('left', trackWidth + 'px');
+
+  let x = 0;
+  const speed = 1;
+
+  function loop() {
+    x -= speed;
+
+    if (x <= -trackWidth) {
+      x = 0;
+    }
+
+    $('.track').eq(0).css('transform', `translateX(${x}px)`);
+    $('.track.clone').css('transform', `translateX(${x + trackWidth}px)`);
+
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+});

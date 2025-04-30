@@ -1067,7 +1067,6 @@ img {
 .monthlyBrand .title {
     text-align: center;
     margin-bottom: 5rem;
-    font-size: 3rem;
 }
 
 .monthlyBrand .title p:first-child {
@@ -1531,44 +1530,62 @@ img {
 
 /* marquee-slide 시작 */
 .marquee {
-    border: 1px solid blue;
     overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 53px;
+  }
+  
+  .track {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+  }
+  
+  .track img {
+    height: 53px;
+    margin-right: 96px;
+    vertical-align: middle;
+  }
+
+.marquee {
+    padding: 3.75rem 0;
+    overflow: hidden;    
 }
 
-.marquee .swiper-wrapper {
-    border: 1px solid red;
-    -webkit-transition-timing-function:linear!important; 
-    transition-timing-function:linear!important;
-}
-
-.marquee .swiper-wrapper .swiper-slide {
-    border: 1px solid red;
+.marquee .scroll {
     display: flex;
-
+    align-items: center;
+    gap : 96px;
+    width: 6164px;
+    animation: marquee 15s linear infinite;
 }
 
-.marquee .swiper-wrapper .swiper-slide img {
-    width: calc(100% / 3 )
-}
+.marquee-content {
+    display: flex;
+  }
 
 @keyframes marquee {
     0% {
-        transform: translateX(35%); 
+        transform: translateX(0); 
     }
     100% {
-        transform: translateX(-100%); 
+        transform: translateX(-3082px);
     }
 }
 
 @media screen and (max-width: 768px) {
     .marquee .scroll {
+        animation: marquee 50s linear infinite;
     }    
 }
 
 @media screen and (max-width: 440px) {
     .marquee .scroll {
+        animation: marquee 20s linear infinite;
     }
-}
+} */
         /* 768px 부터 끊기는 현상 발생 */
 
 /* marquee-slide 끝 */
@@ -1749,6 +1766,7 @@ img {
     overflow: hidden;    
     margin-top: 28px;
     width: 100%;
+    padding-right: 20px;
 }
 
 .mb-company .mb-company-swiper .swiper-wrapper {
