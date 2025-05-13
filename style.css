@@ -1530,63 +1530,29 @@ img {
 
 /* marquee-slide 시작 */
 .marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    height: 53px;
-  }
-  
-  .track {
-    display: inline-block;
-    white-space: nowrap;
-    position: absolute;
-    left: 0;
-  }
-  
-  .track img {
-    height: 53px;
-    margin-right: 96px;
-    vertical-align: middle;
-  }
-
-.marquee {
-    padding: 3.75rem 0;
-    overflow: hidden;    
+	overflow-x: clip;
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
 }
 
-.marquee .scroll {
-    display: flex;
-    align-items: center;
-    gap : 96px;
-    width: 6164px;
-    animation: marquee 15s linear infinite;
+.marquee-inner {
+	display: flex;
+	align-items: center;
+	gap: 2vw;
+	padding: 20px 0;
+	will-change: transform;
 }
 
-.marquee-content {
-    display: flex;
-  }
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0); 
-    }
-    100% {
-        transform: translateX(-3082px);
-    }
+.marquee-inner img {
+	height: 100%;
+	transition: transform 0.5s;
+	flex-shrink: 0;
+	width: 500px;
+    margin: 0 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .marquee .scroll {
-        animation: marquee 50s linear infinite;
-    }    
-}
-
-@media screen and (max-width: 440px) {
-    .marquee .scroll {
-        animation: marquee 20s linear infinite;
-    }
-} */
-        /* 768px 부터 끊기는 현상 발생 */
+/* 768px 부터 끊기는 현상 발생 */
 
 /* marquee-slide 끝 */
 

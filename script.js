@@ -233,30 +233,28 @@ var swiper = new Swiper(".mb-company-swiper", {
 });
 
 
-$(function () {
-  const $track = $('.track');
-  const trackWidth = $track.width();
 
-  // 트랙 복제
-  const $clone = $track.clone();
-  $('.marquee').append($clone);
-  $clone.addClass('clone').css('left', trackWidth + 'px');
 
-  let x = 0;
+
+$(document).ready(function () {
+  const $marquee = $(".marquee-inner");
   const speed = 1;
+  let scrollAmount = 0;
 
-  function loop() {
-    x -= speed;
+  // 콘텐츠 복제
+  const marqueeContent = $marquee.html();
+  $marquee.append(marqueeContent);
 
-    if (x <= -trackWidth) {
-      x = 0;
+  const startScrolling = () => {
+    scrollAmount -= speed;
+
+    if (Math.abs(scrollAmount) >= $marquee[0].scrollWidth / 2) {
+      scrollAmount = 0;
     }
 
-    $('.track').eq(0).css('transform', `translateX(${x}px)`);
-    $('.track.clone').css('transform', `translateX(${x + trackWidth}px)`);
+    $marquee.css("transform", `translateX(${scrollAmount}px)`);
+    requestAnimationFrame(startScrolling);
+  };
 
-    requestAnimationFrame(loop);
-  }
-
-  loop();
+  startScrolling();
 });
